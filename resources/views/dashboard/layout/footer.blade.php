@@ -1,0 +1,1 @@
+<center><b>THANKS FOR USE OUR SERVICE</b></center>
