@@ -10,7 +10,7 @@
             <div class="container-fluid">
                 <div class="row mb-2">
                     <div class="col-sm-6">
-                        <h1>ADDMAILES Action</h1>
+                        <h1>اضافة ايميلات</h1>
                     </div>
                     <div class="col-sm-6">
                         <ol class="breadcrumb float-sm-right">
@@ -32,7 +32,7 @@
                         <!-- general form elements -->
                         <div class="card card-primary">
                             <div class="card-header">
-                                <h3 class="card-title">Add Mailes Section</h3>
+                                <h3 class="card-title">اضافة ايميلات</h3>
                             </div>
                             <!-- /.card-header -->
                             <!-- form start -->
@@ -41,7 +41,7 @@
                                 <div class="card-body">
                                     
                                     <div class="form-group">
-                                        <label for="name">name</label>
+                                        <label for="name">الاسم</label>
                                         <input name="name" type="text"
                                             class="form-control @error('name') is-invalid  @enderror" id="name"
                                             placeholder="Enter name" value="{{ old('name', $sectionData['name']) }}">
@@ -52,7 +52,7 @@
 
                                     </div>
                                     <div class="form-group">
-                                        <label for="email">email</label>
+                                        <label for="email">البريد الالكتروني</label>
                                         <input name="email" type="text"
                                             class="form-control @error('email') is-invalid  @enderror" id="email"
                                             placeholder="Enter email" value="{{ old('email', $sectionData['email']) }}">
@@ -67,14 +67,14 @@
                                 <!-- /.card-body -->
 
                                 <div class="card-footer">
-                                    <button type="submit" class="btn btn-primary">Submit</button>
+                                    <button type="submit" class="btn btn-primary">تاكيد</button>
                                 </div>
                             </form>
-                            <h1> or Import file</h1>
+                            <h1> استيراد</h1>
                             <form action="#" method="POST" enctype="multipart/form-data">
                                 @csrf
                                 <input type="file" name="text_file" required>
-                                <button type="submit">Import</button>
+                                <button type="submit">استيراد</button>
                             </form>
                         </div>
                         <!-- /.card -->

@@ -1,6 +1,6 @@
 @extends('dashboard.layout.layout')
 
-@section('page-title', 'ادخال بريد');
+@section('page-title','اضافة قسم جديد')
 
 @section('main-content')
     <!-- Content Wrapper. Contains page content -->
@@ -10,13 +10,13 @@
             <div class="container-fluid">
                 <div class="row mb-2">
                     <div class="col-sm-6">
-                        <h1>ADDMAILES Action</h1>
+                        <h1>اضافة قسم جديد</h1>
                     </div>
                     <div class="col-sm-6">
                         <ol class="breadcrumb float-sm-right">
                             <li class="breadcrumb-item"><a href="#">القائمة</a></li>
                             <li class="breadcrumb-item active">الاقسام</li>
-                            <li class="breadcrumb-item active">اضافة </li>
+                            <li class="breadcrumb-item active">اضافة</li>
                         </ol>
                     </div>
                 </div>
@@ -32,7 +32,7 @@
                         <!-- general form elements -->
                         <div class="card card-primary card-custom">
                             <div class="card-header">
-                                <h3 class="card-title">اضافة ايميلات </h3>
+                                <h3 class="card-title">اضافة قسم جديد</h3>
                             </div>
                             <style>.card-custom{
                                 width:80%;
@@ -40,12 +40,12 @@
                             }</style>
                             <!-- /.card-header -->
                             <!-- form start -->
-                            <form action="{{ route('plans.store') }}" method="POST" enctype="multipart/form-data">
+                            <form action="{{ route('plans.department.store') }}" method="POST" enctype="multipart/form-data">
                                 @csrf
                                 <div class="card-body ">
                                     
                                     <div class="form-group">
-                                        <label for="name">الاسم</label>
+                                        <label for="name">اسم القسم</label>
                                         <input name="name" type="text"
                                             class="form-control @error('name') is-invalid  @enderror" id="name"
                                             placeholder="Enter name" value="">
@@ -55,15 +55,7 @@
                                         @enderror
 
                                     </div>
-                                    <div class="form-group">
-                                        <label for="email">البريد الالكتروني</label>
-                                        <input name="email" type="text"
-                                            class="form-control @error('email') is-invalid  @enderror" id="email"
-                                            placeholder="Enter email" value="">
-                                        @error('email')
-                                            <span id="exampleInputEmail1-error"
-                                                class="error invalid-feedback">{{ $message }}</span>
-                                        @enderror
+                                   
 
                                     </div>
                                 </div>

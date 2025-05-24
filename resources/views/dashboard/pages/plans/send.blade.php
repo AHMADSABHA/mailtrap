@@ -1,6 +1,6 @@
 @extends('dashboard.layout.layout')
 
-@section('page-title', 'Process Section');
+@section('page-title', 'استيرادايميلات')
 
 @section('main-content')
     <!-- Content Wrapper. Contains page content -->
@@ -10,7 +10,7 @@
             <div class="container-fluid">
                 <div class="row mb-2">
                     <div class="col-sm-6">
-                        <h1>ADDMAILES Action</h1>
+                        <h1>اضافة ايميلات</h1>
                     </div>
                     <div class="col-sm-6">
                         <ol class="breadcrumb float-sm-right">
@@ -36,7 +36,7 @@
                         <!-- general form elements -->
                         <div class="card card-primary card-custom">
                             <div class="card-header">
-                                <h3 class="card-title">Import Section</h3>
+                                <h3 class="card-title">استيراد</h3>
                             </div>
                             <!-- /.card-header -->
                             <!-- form start -->
@@ -44,7 +44,7 @@
                                 @csrf
                                 <input  class="form-control" type="file" name="file" id="formFile" required>
                                 <br/>
-                                &nbsp;&nbsp;     <button type="submit" class="btn btn-success">import</button>
+                                &nbsp;&nbsp;     <button type="submit" class="btn btn-success">استيراد</button>
                             </form>
                         <!-- /.card -->
 

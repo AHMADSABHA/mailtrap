@@ -1,49 +1,49 @@
 @extends('dashboard.layout.layout')
 
-@section('page-title', 'list of emails')
+@section('page-title', 'قائمة الموظفين')
 
 @section('main-content')
 
     <div class="content-wrapper">
-        <!-- Content Header (Page header) -->
+        
         <section class="content-header">
             <div class="container-fluid">
                 <div class="row mb-2">
                     <div class="col-sm-6">
-                        <h1>List Of Emails</h1>
+                        <h1>قائمة الايميلات</h1>
                     </div>
                     <div class="col-sm-6">
                         <ol class="breadcrumb float-sm-right">
-                            <li class="breadcrumb-item"><a href="#">Home</a></li>
-                            <li class="breadcrumb-item active">emails</li>
+                            <li class="breadcrumb-item"><a href="#">القائمة</a></li>
+                            <li class="breadcrumb-item active">الايميلات</li>
                         </ol>
                     </div>
                 </div>
-            </div><!-- /.container-fluid -->
+            </div>
         </section>
-        <!-- Main content -->
+       
         <section class="content">
             <div class="container-fluid">
                 <div class="row">
                     <div class="col-md-12">
                         <div class="card">
                             <div class="card-header">
-                                <a href="{{ route('plans.create.view') }}" class="btn btn-dark"><i class="bi bi-plus-circle"></i>Add New Email</a>&nbsp;&nbsp;&nbsp;&nbsp;
-                                <a href="{{ route('plans.export') }}" class="btn btn-dark"><i class="bi bi-box-arrow-up-right"></i>Export all emails</a>
+                               
+                                <a href="{{ route('plans.export') }}" class="btn btn-dark"><i class="bi bi-box-arrow-up-right"></i>تصدير كامل الايميلات</a>
                             </div>
                             <style>.table-custom{
                                 width:80%;
                                 margin-left:0 ;
                             }</style>
-                            <!-- /.card-header -->
+                           
                             <div class="card-body">
                                 <table class="table table-bordered table-custom">
                                     <thead>
                                         <tr style="text-align: center">
-                                            <th>Id</th>
-                                            <th>Name</th>
-                                            <th>Email</th>
-                                            <th>Action</th>
+                                            <th>الرقم</th>
+                                            <th>الاسم</th>
+                                            <th>البريد الالكتروني</th>
+                                            <th>الاجراء</th>
                                         </tr>
                                     </thead>
                                     <tbody style="text-align: center">
@@ -73,25 +73,25 @@
                                     </tbody>
                                 </table>
                             </div>
-                            <!-- /.card-body -->
                             <div class="card-footer clearfix">
                                 <ul class="pagination pagination-sm m-0 float-right">
-                                    {!! $plans->links('pagination::bootstrap-5') !!}
+                                    <p>
+                                        عرض {{ $plans->firstItem() }} إلى {{ $plans->lastItem() }} من أصل {{ $plans->total() }} نتيجة
+                                    </p>  {!! $plans->links('pagination::bootstrap-4') !!}
                                 </ul>
                             </div>
                         </div>
-                        <!-- /.card -->
                     </div>
-                    <!-- /.col -->
 
                 </div>
-                <!-- /.row -->
-            </div><!-- /.container-fluid -->
+               
+                
+            </div>
         </section>
-        <!-- /.content -->
+        
     </div>
 
-    {{-- Include SweetAlert --}}
+   
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
     <script>
         document.addEventListener('DOMContentLoaded', function () {
@@ -101,19 +101,20 @@
                     e.preventDefault();
                     const form = this.closest('.delete-form');
                     Swal.fire({
-                        title: 'Are you sure?',
-                        text: "You won't be able to revert this!",
+                        title: 'هل أنت متاكد?',
+                        text: "لن تكون قادرا على التراجع!",
                         icon: 'error',
                         showCancelButton: true,
                         confirmButtonColor: '#3085d6',
                         cancelButtonColor: '#d33',
-                        confirmButtonText: 'Yes, delete it!'
+                        confirmButtonText: 'نعم, قم بحذفه!',
+                        cancelButtonText: 'إلغاء'
                     }).then((result) => {
                         if (result.isConfirmed) {
                             
                             Swal.fire({
-      title: "Deleted!",
-      text: "Your file has been deleted.",
+      title: "تم الحذف!",
+      text: "تمت ازالة البريد بنجاح.",
       icon: "success"
     });
     form.submit();

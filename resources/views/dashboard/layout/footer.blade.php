@@ -1,1 +1,1 @@
-<center><b>THANKS FOR USE OUR SERVICE</b></center>
+<center><b>نشكرك على اعتماد خدماتنا</b></center>

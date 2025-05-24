@@ -28,7 +28,7 @@ if (Auth::attempt([
 }
 
 return back()->withErrors([
-    'email' => 'Your email and password doesn`t match',
+    'email' => 'اسم المستخدم او كلمة المرور غير صحيحة',
 ])->onlyInput('email');
 }
 

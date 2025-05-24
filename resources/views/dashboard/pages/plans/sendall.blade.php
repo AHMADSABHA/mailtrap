@@ -1,6 +1,6 @@
 @extends('dashboard.layout.layout')
 
-@section('page-title', 'Send All Section');
+@section('page-title', 'ارسال جماعي');
 
 @section('main-content')
     <!-- Content Wrapper. Contains page content -->
@@ -32,7 +32,7 @@
                         <!-- general form elements -->
                         <div class="card card-primary">
                             <div class="card-header">
-                                <h3 class="card-title">Send Section</h3>
+                                <h3 class="card-title">ارسال </h3>
                             </div>
                             <!-- /.card-header -->
                             <!-- form start -->
@@ -45,7 +45,7 @@
                                 <div class="card-body card-custom">
                                     
                                     <div class="form-group ">
-                                        <label for="title">title</label>
+                                        <label for="title">العنوان</label>
                                         <input name="title" type="text"
                                             class="form-control @error('title') is-invalid  @enderror" id="title"
                                             placeholder="Enter title" value="{{ old('title') }}">
@@ -57,7 +57,7 @@
                                     
                                 </div>
                                 <div class="form-group">
-                                    <label for="body">body</label>
+                                    <label for="body">المحتوى</label>
                                     <textarea name="body" type="text" rows="5"
                                         class="form-control" >{{ old('body') }}</textarea>
                                         
@@ -72,7 +72,7 @@
                                 <!-- /.card-body -->
 
                                 <div class="card-footer">
-                                    <button type="submit" class="btn btn-primary">Submit</button>
+                                    <button type="submit" class="btn btn-primary">تأكيد</button>
                                 </div>
                             </form>
                             
